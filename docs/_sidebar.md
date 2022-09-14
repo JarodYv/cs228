@@ -1,6 +1,8 @@
 * [首页](/)
 * [预备](/preliminaries)
-  *  
+  * [简介](introduction.md)
+  * [概率论回顾](review_of_probability_theory.md)
+  * [真实世界应用案例](examples_of_real-world_applications.md)
 * [表示](/representation)
 * [推断](/inference)
 * [学习](/learning)
