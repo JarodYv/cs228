@@ -1,12 +1,9 @@
 ![logo](_media/icon.svg)
 
-# docsify <small>3.5</small>
+# CS228 - 概率图模型学习笔记
 
-> A magical documentation site generator.
+> 快速掌握概率图模型
 
-- Simple and lightweight
-- No statically built html files
-- Multiple themes
 
 [GitHub](https://github.com/jarodyv/cs228/)
-[Get Started](#cs228)
+[Get Started](README.md)
