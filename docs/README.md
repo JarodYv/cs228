@@ -1,2 +1,7 @@
-# cs228
-Stanford CS228 Probabilistic Graphical Models Study Notes
+# cs228 - 概率图模型
+
+本项目中的学习笔记是斯坦福大学CS288-概率图模型[^1]课程的简明导论。
+
+本课程从基础知识开始介绍概率图形模型，最后从第一性原理出发解释[变分自动编码器](conclusion/variational_autoencoder.md)，这是一个重要的概率模型，也是深度学习中最具影响力的前沿成果之一。
+
+[^1]: 概率图模型是机器学习的一个分支，研究如何用事物的概率描述和归因真实世界。

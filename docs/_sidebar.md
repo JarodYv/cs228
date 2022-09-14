@@ -18,3 +18,5 @@
     * [潜变量模型学习](learning/learning_in_latent_variable_models.md)
     * [贝叶斯学习](learning/bayesian_learning.md)
     * [结构学习](learning/structure_learning.md)
+* [总结](conclusion/README.md)
+    * [变分编码器](conclusion/variational_autoencoder.md) 
