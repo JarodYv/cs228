@@ -9,4 +9,4 @@
 - Multiple themes
 
 [GitHub](https://github.com/jarodyv/cs228/)
-[Get Started](#docsify)
+[Get Started](#)
