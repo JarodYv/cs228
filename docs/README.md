@@ -16,7 +16,7 @@
 * [推理](inference/README.md)
     * [变量消除](inference/variable_elimination.md)
     * [信念传播](inference/belief_propagation.md)
-    * [最大后验概率(MAP)推理](inference/MAP_inference.md)
+    * [最大后验(MAP)推理](inference/MAP_inference.md)
     * [基于抽样的推理](inference/sampling-based_inference.md)
     * [变分推理](inference/variational_inference.md)
 * [学习](learning/README.md)

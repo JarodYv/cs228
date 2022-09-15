@@ -1,4 +1,4 @@
-![logo](_media/icon.svg)
+<img src="_media/icon.png" height="200" alt="logo" align=center />
 
 # CS228 - 概率图模型学习笔记
 
