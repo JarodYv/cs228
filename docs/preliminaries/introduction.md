@@ -123,6 +123,7 @@ $$
 此外，学习这一话题将与计算学习理论领域（该领域解决有限数据的泛化和过拟合等问题）和贝叶斯统计（该领域告诉我们结合先验知识和观测证据的法则）有着重要联系。
 
 [^1]:2011年图灵奖（被认为是“计算机科学诺贝尔奖”）授予了 [朱迪亚·珀尔](http://amturing.acm.org/award_winners/pearl_2658896.cfm)，奖励他创立了概率图模型这一新领域。
+
 [^2]:关于为什么应该使用概率论而不是其他学科的更多哲学讨论，请参阅 [Dutch book argument for probabilism](http://plato.stanford.edu/entries/dutch-book/)
 。
 
