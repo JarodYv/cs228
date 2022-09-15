@@ -99,7 +99,7 @@ $y$ 表示）而生成的，然后一次抽样一个词。相反，如果我们�
 
 * *边缘推理*：当我们将模型中所有其他变量求和后，给定变量的概率是多少？比如确定随机房屋有三间以上卧室的概率。
 
-$$ 
+$$
 p(x_1) = \sum_{x_2} \sum_{x_3} \cdots \sum_{x_n} p(x_1, x_2, \dotsc, x_n)
 $$
 
@@ -122,8 +122,11 @@ $$
 然而，我们会发现学习和推理之间也存在着一种更微妙的内在联系，我们可以证明推理是一个关键的子程序，在学习算法中反复调用。
 此外，学习这一话题将与计算学习理论领域（该领域解决有限数据的泛化和过拟合等问题）和贝叶斯统计（该领域告诉我们结合先验知识和观测证据的法则）有着重要联系。
 
-[^1]:2011年图灵奖（被认为是“计算机科学诺贝尔奖”）授予了 [朱迪亚·珀尔](http://amturing.acm.org/award_winners/pearl_2658896.cfm)，奖励他创立了概率图模型这一新领域。
+[^1]:
+2011年图灵奖（被认为是“计算机科学诺贝尔奖”）授予了 [朱迪亚·珀尔](http://amturing.acm.org/award_winners/pearl_2658896.cfm)
+，奖励他创立了概率图模型这一新领域。
 
-[^2]:关于为什么应该使用概率论而不是其他学科的更多哲学讨论，请参阅 [Dutch book argument for probabilism](http://plato.stanford.edu/entries/dutch-book/)
+[^2]:
+关于为什么应该使用概率论而不是其他学科的更多哲学讨论，请参阅 [Dutch book argument for probabilism](http://plato.stanford.edu/entries/dutch-book/)
 。
 
