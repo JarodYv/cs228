@@ -18,15 +18,58 @@
 
 这三个性质被称为概率公理。
 
-例如：
+举例：考虑抛六面骰子的事件。样本空间为 $\Omega = \{1, 2, 3, 4, 5, 6\}$。 我们可以在此样本空间上定义不同的事件空间。
+例如，最简单的事件空间是平凡事件空间 $F = \{\emptyset, \Omega\}$。另一个事件空间是 $ \Omega $ 的所有子集的集合。
+对于第一个事件空间，满足上述要求的唯一概率测度为 $P(\emptyset) = 0, P(\Omega) = 1$
+对于第二个事件空间，一个有效的概率度量是将事件空间中每个集合的概率分配为 $\frac{i}{6}$，其中 $i$ 是该集合的元素数；
+例如：$P(\{1, 2, 3, 4\}) = \frac{4}{6}$ 和 $P(\{1, 2, 3\}) = \frac{3}{6}$。
 
 #### **性质**
 
+- $A \subseteq B \implies P(A) \leq P(B)$
+- $P(A \cap B) \leq \min(P(A), P(B))$
+- **联合约束:** $P(A \cup B) \leq P(A) + P(B)$
+- $P(\Omega - A) = 1 - P(A)$
+- **全概率法则:** 如果 $A_1, \dotsc, A_k$ 是一组不相交的事件，即$\bigcup^k_{i=1} A_i = \Omega$$, 那么 $\sum^k_{i=1} P(A_i) = 1$
+
 ### 1.1 条件概率
+
+设 $B$ 是非零概率的事件。给定 $B$ 的情况下任意事件 $A$ 的条件概率为：
+
+$$ P(A \mid B) = \frac {P(A \cap B)}{P(B)} $$
+
+换句话说，$P(A \mid B)$ 是观察事件B发生后事件A的概率度量。
 
 ### 1.2 链式法则
 
+设 $S_1, \dotsc, S_k$ 为事件，$P(S_i) >0$，则链式法则描述如下：
+
+$$
+\begin{align*}
+& P(S_1 \cap S_2 \cap \dotsb \cap S_k) \\
+&= P(S_1) P(S_2 | S_1) P(S_3 | S_2 \cap S_1 ) \dotsb P(S_k | S_1 \cap S_2 \cap \dotsb \cap S_{k-1})
+\end{align*}
+$$
+
+当 $k=2$ 时，上面的公式就是条件概率公式：
+
+$$ P(S_1 \cap S_2) = P(S_1) P(S_2 | S_1) $$
+
+一般来说，链式规则是通过多次应用条件概率的定义而导出的，例如：
+
+$$
+\begin{align*}
+& P(S_1 \cap S_2 \cap S_3 \cap S_4) \\
+&= P(S_1 \cap S_2 \cap S_3) P(S_4 \mid S_1 \cap S_2 \cap S_3) \\
+&= P(S_1 \cap S_2) P(S_3 \mid S_1 \cap S_2) P(S_4 \mid S_1 \cap S_2 \cap S_3) \\
+&= P(S_1) P(S_2 \mid S_1) P(S_3 \mid S_1 \cap S_2) P(S_4 \mid S_1 \cap S_2 \cap S_3)
+\end{align*}
+$$
+
 ### 1.3 独立性
+
+如果 $P(A \cap B) = P(A)P(B)$，则称这两个事件独立，或等价于 $P(A \mid B) = P(A)$。直觉感觉，如果事件 $A$ 和 $B$ 独立，
+意味着对 $B$ 的观测不影响 $A$ 的概率。
 
 ## 2. 随机变量
 
