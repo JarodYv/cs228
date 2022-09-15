@@ -10,7 +10,7 @@
 
 **事件集（或事件空间）$ F $**: 元素 $A \in F$（称之为事件）是 $\Omega$ 的子集的集合。（例如，$A \subseteq \Omega$ 是实验可能结果的集合）。
 
-**概率测度**: 一个满足如下性质的函数 $P : F \to \Re$
+**概率测度**: 一个满足如下性质的函数 $P : F \to \Reals$
 
 * 对于任意 $A \in F$, $P(A) \geq 0$
 * 如果 $A_1, A_2, \dotsc$ 是不相交事件（即 $A_i \cap A_j = \emptyset$，其中 $i \neq j$），那么 $P(\bigcup_i A_i) = \sum_i P(A_i)$
@@ -101,7 +101,7 @@ $$
 ### 2.1 累积分布函数
 
 为了指定处理随机变量时使用的概率度量，通常会指定替代函数（CDF、PDF和PMF），从这些函数中可以立即得出控制实验的概率度量。
-本节和接下来的两节，我们将依次介绍这些类型的函数。**累积分布函数**（CDF）是一个函数 $F_X : \Re \to [0, 1]$，它指定了如下概率度量：
+本节和接下来的两节，我们将依次介绍这些类型的函数。**累积分布函数**（CDF）是一个函数 $F_X : \Reals \to [0, 1]$，它指定了如下概率度量：
 
 $$ F_X(x) = P(X \leq x) $$
 
@@ -117,7 +117,7 @@ $$ F_X(x) = P(X \leq x) $$
 ### 2.2 概率质量函数
 
 当随机变量 $X$ 取有限组可能值时（即 $X$ 是离散随机变量），表示随机变量的概率度量的更简单方法是直接指定随机变量可能取到的每个值的概率。
-特别地，概率质量函数（PMF）是一个函数 $p_X : \Re \to [0, 1]$ 因此 $p_X(x) = P(X = x)$
+特别地，概率质量函数（PMF）是一个函数 $p_X : \Reals \to [0, 1]$ 因此 $p_X(x) = P(X = x)$
 
 在离散随机变量的情况下，我们使用符号 $Val(X)$ 表示随机变量 $X$ 的一组可能值。
 例如：如果 $X(\omega)$ 是一个随机变量，表示10次硬币投掷中的正面数，那么 $Val(X) = \{0, 1, 2, \dotsc, 10\}$
@@ -141,7 +141,7 @@ $$ f_X(x) = \frac{dF_X(x)}{dx} $$
 $$ P(x \leq X \leq x + \delta x) \approx f_X(x) \delta x$$
 
 CDF和PDF（如果存在）都可用于计算不同事件的概率。但需要强调的是，任意给定点 $x$ 处的PDF值不是该事件的概率，比如 $f_X(x) \neq P(X = x)$。
-举个例子，$f_X(x)$ 可以去大于1的值，但 $f_X(x)$ 在 $\Re$ 的任意子集上的积分最多为1。
+举个例子，$f_X(x)$ 可以去大于1的值，但 $f_X(x)$ 在 $\Reals$ 的任意子集上的积分最多为1。
 
 #### **性质**
 
@@ -151,69 +151,69 @@ CDF和PDF（如果存在）都可用于计算不同事件的概率。但需要�
 
 ### 2.4 期望
 
-假设 $X$ 是一个离散随机变量，具有PMF $p_X(x)$， $g : \Re \to \Re$ 是任意函数。这里 $g(X)$ 可以看作一个随机变量，
+假设 $X$ 是一个离散随机变量，具有PMF $p_X(x)$， $g : \Reals \to \Reals$ 是任意函数。这里 $g(X)$ 可以看作一个随机变量，
 我们定义 $g(X)$ 的 **期望** 或 **期望值** 为
 
-$$ \E[g(X)] = \sum_{x \in Val(X)} g(x)p_X(x)$$
+$$ \mathbb{E}[g(X)] = \sum_{x \in Val(X)} g(x)p_X(x)$$
 
 如果 $X$ 是一个连续随机变量，具有PDF $f_X(x)$，则 $g(X)$ 的期望值定义为
 
-$$ \E[g(X)] = \int^{\infty}_{-\infty} g(x)f_X(x)dx$$
+$$ \mathbb{E}[g(X)] = \int^{\infty}_{-\infty} g(x)f_X(x)dx$$
 
 直觉上，$g(X)$ 的期望可被视为 $x$ 取不同值时$g(x)$值的“加权平均值”，其中权重由 $p_X(x)$ 或 $f_X(x)$给出。
-作为上述内容的一种特殊情况，注意，随机变量本身的期望值 $\E[X]$ 是通过 $g(x) = x$ 求出的。这也被称为随机变量 $X$ 的平均值。
+作为上述内容的一种特殊情况，注意，随机变量本身的期望值 $\mathbb{E}[X]$ 是通过 $g(x) = x$ 求出的。这也被称为随机变量 $X$ 的平均值。
 
 #### **性质**
 
-- $\E[a] = a$$ for any constant $$a \in \Re$
-- $\E[af(X)] = a\E[f(X)]$$ for any constant $$a \in \Re$
-- (线性期望) $\E[f(X) + g(X)] = \E[f(X)] + \E[g(X)]$
-- 对于离散随机变量 $X$, $\E[\mathbf{1}\{X = k\}] = P(X = k)$
+- $\mathbb{E}[a] = a$ 对任意常数 $a \in \Reals$
+- $\mathbb{E}[af(X)] = a\mathbb{E}[f(X)]$ 对任意常数 $a \in \Reals$
+- (线性期望) $\mathbb{E}[f(X) + g(X)] = \mathbb{E}[f(X)] + \mathbb{E}[g(X)]$
+- 对于离散随机变量 $X$, $\mathbb{E}[\mathbf{1}\{X = k\}] = P(X = k)$
 
 ### 2.5 方差
 
-随机变量 $X$ 的方差是随机变量 $X$ 在其均值附近的集中程度的度量。形式上，随机变量 $X$ 的方差定义为 $Var[X] = \E[(X - \E[X])^2]$
+随机变量 $X$ 的方差是随机变量 $X$ 在其均值附近的集中程度的度量。形式上，随机变量 $X$ 的方差定义为 $Var[X] = \mathbb{E}[(X - \mathbb{E}[X])^2]$
 
 使用前面章节给出的性质，我们可以推到出方差的另一种表达形式：
 
 $$
 \begin{align*}
-& \E[(X - \E[X])^2] \\
-&= \E[X^2 - 2\E[X]X + \E[X]^2] \\
-&= \E[X^2] - 2\E[X]\E[X] + \E[X]^2 \\
-&= \E[X^2] - \E[X]^2
+& \mathbb{E}[(X - \mathbb{E}[X])^2] \\
+&= \mathbb{E}[X^2 - 2\mathbb{E}[X]X + \mathbb{E}[X]^2] \\
+&= \mathbb{E}[X^2] - 2\mathbb{E}[X]\mathbb{E}[X] + \mathbb{E}[X]^2 \\
+&= \mathbb{E}[X^2] - \mathbb{E}[X]^2
 \end{align*}
 $$
 
-其中第二等式来自于线性期望，且事实上，相对于外部期望，$\E[X]$实际上是一常数。
+其中第二等式来自于线性期望，且事实上，相对于外部期望，$\mathbb{E}[X]$实际上是一常数。
 
 #### **性质**
 
-- $Var[a] = 0$$ for any constant $$a \in \Re$
-- $Var[af(X)] = a^2 Var[f(X)]$$ for any constant $$a \in \Re$
+- $Var[a] = 0$ 对任意常数 $a \in \Reals$
+- $Var[af(X)] = a^2 Var[f(X)]$ 对任意常数 $a \in \Reals$
 
 **例题：** 计算均匀随机变量 $X$ 的均值和方差，$X$ 的 PDF为 $f_X(x) = 1, \forall x \in [0, 1]$，否则为0。
 
 $$
 \begin{align*}
-\E[X] &= \int^{\infty}_{-\infty} x f_X(x) dx = \int^1_0 x dx = \frac{1}{2} \\
-\E[X^2] &= \int^{\infty}_{-\infty} x^2 f_X(x)dx = \int^1_0 x^2 dx = \frac{1}{3} \\
-Var[X] &= \E[X^2] - \E[X]^2 = \frac{1}{3} - \frac{1}{4} = \frac{1}{12}
+\mathbb{E}[X] &= \int^{\infty}_{-\infty} x f_X(x) dx = \int^1_0 x dx = \frac{1}{2} \\
+\mathbb{E}[X^2] &= \int^{\infty}_{-\infty} x^2 f_X(x)dx = \int^1_0 x^2 dx = \frac{1}{3} \\
+Var[X] &= \mathbb{E}[X^2] - \mathbb{E}[X]^2 = \frac{1}{3} - \frac{1}{4} = \frac{1}{12}
 \end{align*}
 $$
 
-**例题：** 设 $g(x) = \mathbf{1}\{x \in A\}$，其中 $A \subseteq \Omega$，求 $\E[g(X)]$
+**例题：** 设 $g(x) = \mathbf{1}\{x \in A\}$，其中 $A \subseteq \Omega$，求 $\mathbb{E}[g(X)]$
 
 - 离散情况
 
 $$
-\E[g(X)] = \sum_{x \in Val(X)} \mathbf{1}\{x \in A \} P_X(x) = \sum_{x \in A} P_X(x) = P(X \in A)
+\mathbb{E}[g(X)] = \sum_{x \in Val(X)} \mathbf{1}\{x \in A \} P_X(x) = \sum_{x \in A} P_X(x) = P(X \in A)
 $$
 
 - 连续情况
 
 $$
-\E[g(X)] = \int_{-\infty}^\infty \mathbf{1}\{x \in A \} f_X(x) dx = \int_{x\in A} f_X(x) dx = P(X \in A)
+\mathbb{E}[g(X)] = \int_{-\infty}^\infty \mathbf{1}\{x \in A \} f_X(x) dx = \int_{x\in A} f_X(x) dx = P(X \in A)
 $$
 
 ### 2.6 一些常见的随机变量
