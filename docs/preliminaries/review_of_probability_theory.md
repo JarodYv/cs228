@@ -386,7 +386,7 @@ $$
 
 **引理 3.1**: 如果 $X$ 和 $Y$ 是独立的，那么最任意子集 $A, B \subseteq \Reals$，可得
 
-$$ P(X \in A, Y \in B) = P(X \in A)P(Y \in B). $$
+$$ P(X \in A, Y \in B) = P(X \in A)P(Y \in B) $$
 
 通过使用上述引理，我们可以证明如果 $X$ 独立于 $Y$，那么 $X$的任意函数都独立于 $Y$ 的任意函数。
 
@@ -402,7 +402,7 @@ $$
 对于连续随机变量 $X$ 和 $Y$，类似的表达是：
 
 $$
-\E[g(X, Y)] = \int^{\infty}_{-\infty} \int^{\infty}_{-\infty} g(x, y)f_{XY}(x, y)dxdy
+\mathbb{E}[g(X, Y)] = \int^{\infty}_{-\infty} \int^{\infty}_{-\infty} g(x, y)f_{XY}(x, y)dxdy
 $$
 
 我们可以利用期望这一概念来研究两个随机变量之间的关系。特别地，两个随机变量 $X$ 和 $Y$ 的协方差定义为:
