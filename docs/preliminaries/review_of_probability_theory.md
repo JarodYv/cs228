@@ -304,7 +304,7 @@ $$
 
 $$ p_{XY}(x, y) = P(X = x, Y = y) $$
 
-其中，$0 \leq P_{XY}(x, y) \leq 1$$ for all $$x, y,$$ and $$\sum_{x \in Val(X)} \sum_{y \in Val(Y)} P_{XY}(x, y) = 1$。
+其中，对于所有 $x, y$，$0 \leq P_{XY}(x, y) \leq 1$ 且 $\sum_{x \in Val(X)} \sum_{y \in Val(Y)} P_{XY}(x, y) = 1$。
 
 两个变量的联合概率质量函数PMF如何分别与每个变量的概率质量函数相关？可以证明：
 
@@ -334,9 +334,43 @@ $$ f_X(x) = \int^{\infty}_{-\infty} f_{XY} (x, y)dy $$
 
 ### 3.4 条件概率分布
 
+条件分布试图回答这样一个问题：当我们知道 $X$必须取某个值 $x$ 时，$Y$ 上的概率分布是什么？在离散情况下，给定 $X$ 情况下 $Y$ 的条件概率质量函数很简单
+
+$$ p_{Y \mid X} (y \mid x) = \frac{p_{XY}(x, y)}{p_X(x)}, $$
+
+假设 $p_X(x) \neq 0$。
+
+在连续情况下，由于连续随机变量 $X$ 取特定值 $x$ 的概率为零，因此从技术上来说，情况更为复杂。
+忽略这些技术细节，我们简单地通过与离散情况的类比可以得到给定 $X = x$ 情况下 $Y$ 的*条件概率密度*为
+
+$$ f_{Y \mid X}(y \mid x) = \frac{f_{XY} (x, y)}{f_X(x)} $$
+
+假定 $f_X(x) \neq 0$。
+
 ### 3.5 链式法则
 
+我们之前为事件推导的链式法则可应用于多随机变量，如下所示：
+
+$$
+\begin{align*}
+& p_{X_1, \cdots X_n} (x_1, \cdots, x_n) \\
+&= p_{X_1} (x_1) p_{X_2 \mid X_1} (x_2 \mid x_1) \cdots p_{X_n \mid X_1, \cdots, X_{n-1}} (x_n \mid x_1, \cdots, x_{n-1})
+\end{align*}
+$$
+
 ### 3.6 贝叶斯法则
+
+在推导条件概率表达式时经常会用到一个有用的公式叫**贝叶斯法则**。
+
+$$
+P_{Y \mid X}(y \mid x) = \frac{P_{XY}(x, y)}{P_X(x)} = \frac{P_{X \mid Y} (x \mid y) P_Y(y)}{\sum_{y' \in Val(Y)} P_{X \mid Y} (x \mid y') P_Y(y')}.
+$$
+
+如果随机变量 $X$ 和 $Y$ 是连续的，
+
+$$
+f_{Y \mid X}(y\mid x) = \frac{f_{XY}(x, y)}{f_X(x)} = \frac{f_{X \mid Y} (x \mid y) f_Y(y)}{\int^{\infty}_{- \infty} f_{X\mid Y} (x \mid y') f_Y (y') dy'}.
+$$
 
 ### 3.7 独立性
 
