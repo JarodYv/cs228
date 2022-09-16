@@ -374,5 +374,60 @@ $$
 
 ### 3.7 独立性
 
+如果两个随机变量 $X$ 和 $Y$ 对于所有取值 $x$ 和 $y$，都有 $F_{XY} (x, y) = F_X(x)F_Y(y)$，则这两个随机变量独立。等价于，
+
+- 对离散随机变量来说，对所有 $x \in Val(X), y \in Val(Y)$，$p_{XY} (x, y) = p_X(x)p_Y(y)$
+- 对离散随机变量来说，对所有 $y \in Val(Y)$， 当 $p_X(x) \neq 0$ 时，$p_{Y\mid X}(y \mid x) = p_Y(y)$
+- 对连续随机变量来说，对所有 $x, y \in \Reals$，$f_{XY} (x, y) = f_X(x)f_Y(y)$
+- 对连续随机变量来说，对所有 $y \in \Reals$，当 $f_X(x) \neq 0$ 时，$f_{Y\mid X}(y \mid x) = f_Y(y)$
+
+不严谨地说，两个随机变量 $X$ 和 $Y$ 是独立的，意味着“知道”一个变量的值将永远不会对另一变量的条件概率分布产生任何影响。
+也就是说，你只知道 $f(x)$ 和 $g(x)$ 就知道了关于这对随机变量 $(X,Y)$ 的所有信息。
+
+**引理 3.1**: 如果 $X$ 和 $Y$ 是独立的，那么最任意子集 $A, B \subseteq \Reals$，可得
+
+$$ P(X \in A, Y \in B) = P(X \in A)P(Y \in B). $$
+
+通过使用上述引理，我们可以证明如果 $X$ 独立于 $Y$，那么 $X$的任意函数都独立于 $Y$ 的任意函数。
+
 ### 3.8 期望和协方差
+
+假设我们有2个离散随机变量 $X$ 和 $Y$，并且 $g : \Reals^2 \to \Reals$ 是这两个随机变量的函数。
+那么函数 $g$ 的期望值定义为：
+
+$$
+\mathbb{E}[g(X,Y)] = \sum_{x \in Val(X)} \sum_{y \in Val(Y)} g(x, y)p_{XY}(x, y)
+$$
+
+对于连续随机变量 $X$ 和 $Y$，类似的表达是：
+
+$$
+\E[g(X, Y)] = \int^{\infty}_{-\infty} \int^{\infty}_{-\infty} g(x, y)f_{XY}(x, y)dxdy
+$$
+
+我们可以利用期望这一概念来研究两个随机变量之间的关系。特别地，两个随机变量 $X$ 和 $Y$ 的协方差定义为:
+
+$$ Cov[X, Y] = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] $$
+
+使用类似于方差的参数，我们可以将其重写为:
+
+$$
+\begin{align*}
+Cov[X, Y]
+&= \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] \\
+&= \mathbb{E}[XY - X\mathbb{E}[Y] - Y \mathbb{E}[X] + \mathbb{E}[X]\mathbb{E}[Y]] \\
+&= \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y] - \mathbb{E}[Y]\mathbb{E}[X] + \mathbb{E}[X]\mathbb{E}[Y] \\
+&= \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]
+\end{align*}
+$$
+
+这里，体现两种协方差形式等价的关键步骤是第三个等号，此处 $\mathbb{E}[X]$ 和 $\mathbb{E}[Y]$ 是常数，可以从期望中提取出来。
+当 $Cov[X, Y] = 0$ 时，我们说 $X$ 和 $Y$ 不相关。
+
+#### **性质**
+
+- (线性期望) $\mathbb{E}[f(X, Y) + g(X, Y)] = \mathbb{E}[f(X, Y)] + \mathbb{E}[g(X, Y)]$
+- $Var[X + Y] = Var[X] + Var[Y] + 2Cov[X, Y]$
+- 如果 $X$ 与 $Y$ 独立, 那么 $Cov[X, Y] = 0$
+- 如果 $X$ 与 $Y$ 独立, 那么 $\mathbb{E}[f(X)g(Y)] = \mathbb{E}[f(X)]\mathbb{E}[g(Y)]$
 
