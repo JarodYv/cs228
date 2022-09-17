@@ -8,7 +8,7 @@
 
 **样本空间 $ \Omega $**: 随机实验所有结果的集合。其中，每个结果 $\omega \in \Omega$ 都可以被认为是实验结束时真实世界状态的完整描述。
 
-**事件集（或事件空间）$ F $**: 元素 $A \in F$（称之为事件）是 $\Omega$ 的子集的集合。（例如，$A \subseteq \Omega$ 是实验可能结果的集合）。
+**事件集（或事件空间）$ F $**: 元素 $A（称之为事件） \in F$ 是 $\Omega$ 的子集的集合。（例如，$A \subseteq \Omega$ 是实验可能结果的集合）。
 
 **概率测度**: 一个满足如下性质的函数 $P : F \to \Reals$
 
@@ -26,7 +26,7 @@
 
 #### **性质**
 
-- $A \subseteq B \implies P(A) \leq P(B)$
+- $A \subseteq B \implies P(A) \leq P(B)$ [证明](#proof1)
 - $P(A \cap B) \leq \min(P(A), P(B))$
 - **联合约束:** $P(A \cup B) \leq P(A) + P(B)$
 - $P(\Omega - A) = 1 - P(A)$
@@ -431,3 +431,15 @@ $$
 - 如果 $X$ 与 $Y$ 独立, 那么 $Cov[X, Y] = 0$
 - 如果 $X$ 与 $Y$ 独立, 那么 $\mathbb{E}[f(X)g(Y)] = \mathbb{E}[f(X)]\mathbb{E}[g(Y)]$
 
+## 附录（证明）
+
+<a id="proof1"></a>
+#### $A \subseteq B \implies P(A) \leq P(B)$
+
+$A \subseteq B \implies B = A \cup S $, 其中 $A \cap S = \emptyset $
+
+根据公理(2), $P(B) = P(A \cup S) = P(A) + P(S)$
+
+由公理(1)已知 $P(S) \ge 0$,
+
+$\therefore P(B) = P(A) + P(S) \ge P(A)$ 即，$P(A) \le P(B) \blacksquare$
