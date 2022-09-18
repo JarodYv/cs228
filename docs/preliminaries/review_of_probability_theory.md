@@ -27,8 +27,8 @@
 #### **性质**
 
 - $A \subseteq B \implies P(A) \leq P(B)$ [证明](#proof1)
-- $P(A \cap B) \leq \min(P(A), P(B))$
-- **联合约束:** $P(A \cup B) \leq P(A) + P(B)$
+- $P(A \cap B) \leq \min(P(A), P(B))$ [证明](#proof2)
+- **联合约束:** $P(A \cup B) \leq P(A) + P(B)$ [证明](#proof3)
 - $P(\Omega - A) = 1 - P(A)$
 - **全概率法则:** 设 $A_1, \dotsc, A_k$ 是一组不相交的事件，如果 $\bigcup^k_{i=1} A_i = \Omega$, 那么 $\sum^k_{i=1} P(A_i) = 1$
 
@@ -434,12 +434,32 @@ $$
 ## 附录（证明）
 
 <a id="proof1"></a>
-#### $A \subseteq B \implies P(A) \leq P(B)$
+##### 1. $A \subseteq B \implies P(A) \leq P(B)$
 
-$A \subseteq B \implies B = A \cup S $, 其中 $A \cap S = \emptyset $
+**证明：** $\because A \subseteq B $
 
-根据公理(2), $P(B) = P(A \cup S) = P(A) + P(S)$
+$\therefore B = A \cup S $, 其中 $A \cap S = \emptyset $
 
-由公理(1)已知 $P(S) \ge 0$,
+根据公理(2)可得, $P(B) = P(A \cup S) = P(A) + P(S)$
 
-$\therefore P(B) = P(A) + P(S) \ge P(A)$ 即，$P(A) \le P(B) \blacksquare$
+由公理(1)可知 $P(S) \ge 0$,
+
+$\therefore P(B) = P(A) + P(S) \ge P(A)$ 即，$P(A) \le P(B) \qquad \blacksquare$
+
+<a id="proof2"></a>
+##### 2. $P(A \cap B) \leq \min(P(A), P(B))$
+
+**证明：** 设 $J$ 为 $A, B$ 的交集，即 $J = A \cap B$，则有 $J \subseteq A$ 且 $J \subseteq B$
+
+根据性质 $A \subseteq B \implies P(A) \leq P(B)$ 可得：
+
+$P(J) = P(A \cap B) \leq P(A)$;
+
+$P(J) = P(A \cap B) \leq P(B)$;
+
+综合上面两个等式可得，$P(A \cap B) \leq \min(P(A), P(B)) \qquad \blacksquare$
+
+<a id="proof3"></a>
+##### 3. $P(A \cup B) \leq P(A) + P(B)$
+
+**证明：** 
