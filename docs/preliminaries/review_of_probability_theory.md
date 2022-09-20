@@ -29,8 +29,8 @@
 - $A \subseteq B \implies P(A) \leq P(B)$ [证明](#proof1)
 - $P(A \cap B) \leq \min(P(A), P(B))$ [证明](#proof2)
 - **联合约束:** $P(A \cup B) \leq P(A) + P(B)$ [证明](#proof3)
-- $P(\Omega - A) = 1 - P(A)$
-- **全概率法则:** 设 $A_1, \dotsc, A_k$ 是一组不相交的事件，如果 $\bigcup^k_{i=1} A_i = \Omega$, 那么 $\sum^k_{i=1} P(A_i) = 1$
+- $P(\Omega - A) = 1 - P(A)$ [证明](#proof4)
+- **全概率法则:** 设 $A_1, \dotsc, A_k$ 是一组不相交的事件，如果 $\bigcup^k_{i=1} A_i = \Omega$, 那么 $\sum^k_{i=1} P(A_i) = 1$ [证明](#proof5)
 
 ### 1.1 条件概率
 
@@ -462,7 +462,7 @@ $P(J) = P(A \cap B) \leq P(B)$;
 <a id="proof3"></a>
 ##### 3. $P(A \cup B) \leq P(A) + P(B)$
 
-**证明：** 设 $B\rq \subseteq B$ 且 $A \cap B\rq = \emptyset$，且 $A \cup B \eq A \cup B\rq$，
+**证明：** 设 $B\rq \subseteq B$， $A \cap B\rq = \emptyset$，且 $A \cup B = A \cup B\rq$，
 
 $\because A \cap B\rq = \emptyset$
 
@@ -475,3 +475,31 @@ $\therefore$ 根据性质（1）可得：$P(B\rq) \leq P(B)$
 $\therefore P(A)+P(B\rq) \leq P(A)+P(B)$
 
 $\therefore P(A \cup B) \leq P(A)+P(B) \qquad \blacksquare$
+
+<a id="proof4"></a>
+##### 4. $P(\Omega - A) = 1 - P(A)$
+
+**证明：** $\because \Omega = (\Omega - A) \cup A, (\Omega - A) \cap A = \emptyset$
+
+$\therefore P(\Omega) = P((\Omega - A) \cup A) = P(\Omega - A) + P(A)$ （公理2）
+
+$\because P(\Omega) = 1 $ (公理3)
+
+$\therefore 1 = P(\Omega - A) + P(A)$
+
+交换位置得 $P(\Omega - A) = 1 - P(A) \qquad \blacksquare$
+
+<a id="proof5"></a>
+##### 5. 全概率法则
+
+**证明：** $\because A_1, \dotsc, A_k$ 是一组不相交的事件
+
+$\therefore P(\bigcup_i A_i) = \sum_i P(A_i)$ （公理2）
+
+$\because \bigcup^k_{i=1} A_i = \Omega$
+
+$\therefore P(\Omega) = \sum_i P(A_i)$
+
+$\because P(\Omega) = 1 $ (公理3)
+
+$\therefore \sum_i P(A_i) = 1 \qquad \blacksquare$
