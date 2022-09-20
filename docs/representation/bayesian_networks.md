@@ -135,7 +135,7 @@ $$ p(l, g, i, d, s) = p(l \mid g)\, p(g \mid i, d)\, p(i)\, p(d)\, p(s \mid i). 
 你可以随意使用它，如果遇到任何bug或反馈，请通过web应用程序上的“反馈”按钮提交。
 
 $d$分离这一概念很有用，它可以让我们能够描述模型中的大部分依赖关系。
-设 $I(G) = \{(X \perp Y \mid Z) : \text{$X,Y$ are $d$-sep given $Z$}\}$
+设 $I(G) = \{(X \perp Y \mid Z) : X,Y \text{are} d\text{-sep given} Z\}$
 表示一组在$G$中$d$分隔的变量。
 
 **事实**: 如果$p$是$G$上因式分解，则 $I(G) \subseteq I(p)$。在这种情况下，我们说 $G$ 是 $p$ 的$I$-map（独立映射）。
