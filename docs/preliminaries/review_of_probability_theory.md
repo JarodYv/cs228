@@ -462,4 +462,16 @@ $P(J) = P(A \cap B) \leq P(B)$;
 <a id="proof3"></a>
 ##### 3. $P(A \cup B) \leq P(A) + P(B)$
 
-**证明：** 
+**证明：** 设 $B\rq \subseteq B$ 且 $A \cap B\rq = \emptyset$，且 $A \cup B \eq A \cup B\rq$，
+
+$\because A \cap B\rq = \emptyset$
+
+$\therefore$ 根据公理（2）可得： $P(A \cup B) = P(A \cup B\rq) = P(A)+P(B\rq)$
+
+$\because B\rq \subseteq B$
+
+$\therefore$ 根据性质（1）可得：$P(B\rq) \leq P(B)$
+
+$\therefore P(A)+P(B\rq) \leq P(A)+P(B)$
+
+$\therefore P(A \cup B) \leq P(A)+P(B) \qquad \blacksquare$
