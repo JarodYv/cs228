@@ -91,6 +91,7 @@ $$ p(l, g, i, d, s) = p(l \mid g)\, p(g \mid i, d)\, p(i)\, p(d)\, p(s \mid i). 
 感兴趣的读者可以用一些代数方法很容易地证明这些结果。
 
 ![](../_media/img/3node-bayesnets.png)
+
 <small>基于3个变量的贝叶斯网络，编码不同类型的依赖：级联（a，b）、共父（c）和v结构（d）。</small>
 
 - *共父*: 如果 $G$ 是 $X \leftarrow Z \rightarrow Y$ 这种形式，且 $Z$ 被观察到，那么 $X \perp Y \mid Z$。
@@ -123,12 +124,14 @@ $$ p(l, g, i, d, s) = p(l \mid g)\, p(g \mid i, d)\, p(i)\, p(d)\, p(s \mid i). 
 举个例子，如下图：
 
 ![](../_media/img/dsep2.png)
+
 <small>本例中, 给定 $X_2, X_3$，$X_1$ 和 $X_6$ $d$是分离的 </small>
 
 给定 $X_2, X_3$，$X_1$ 和 $X_6$ 是 $d$分离的。然而，给定 $X_1, X_6$，$X_2$ 和 $X_3$ 不是 $d$分离的，
 因为我们可以找到一条活跃路径 $(X_2, X_6, X_5, X_3)$。
 
 ![](../_media/img/dsep1.png)
+
 <small>然而，给定 $X_1, X_6$，$X_2$ 和 $X_3$ 不是 $d$分离的。当观察到$X_6$时，有一个活动路径通过v结构。 </small>
 
 一位师兄创建了一个[交互式网页模拟器](http://pgmlearning.herokuapp.com/dSepApp)来检测$d$分离。
@@ -151,9 +154,10 @@ $d$分离这一概念很有用，它可以让我们能够描述模型中的大�
 这引出了我们最后一个或许也是最重要的问题：有向图能表示任意分布 $p$ 的所有独立性吗？
 更正式地说，给定一个分布 $p$，我们能构造一个这样满足 $I(G) = I(p)$ 的图 $G$ 吗？
 
-首先，请注意，构造满足 $I(G) \subseteq I(p)$ 的 $G$ 很容易。一个全连接的DAG $G$ 是任意分布的 $I$-map，因为 $I(G) = \emptyset。
+首先，请注意，构造满足 $I(G) \subseteq I(p)$ 的 $G$ 很容易。一个全连接的DAG $G$ 是任意分布的 $I$-map，因为 $I(G) = \emptyset$。
 
 ![](../_media/img/full-bayesnet.png)
+
 <small>具有4个变量的全连接贝叶斯网络。模型中不存在独立性，他是任意分布的$I$-map。</small>
 
 一个更有趣的问题是我们是否可以找到 $p$ 的最小 $I$-map $G$，例如一个即使从 $G$ 中删除一条边也会导致它不再是 $I$-map的 $I$-map $G$。
